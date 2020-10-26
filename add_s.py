@@ -17,21 +17,23 @@ lbl_temp = tk.Label(master=frm_entry, text="\N{DEGREE FAHRENHEIT}")
 ent_temperature.grid(row=0, column=0, sticky="e")
 lbl_temp.grid(row=0, column=1, sticky="w")
 
-#def (C - 32) = 32 + 1.8*f
-#(5/9) * (float(f) - 32)
-def f_2_c():
-    #Get the temp from the entry field
+#Delete f_2_c()
+#And replace it with your own function
+#Function must read .get() value from ent_temperature
+#Function must set lbl_temp["text"] = .get() value + "s"
+def add_s():
+    #Get the text from the entry field
     f = ent_temperature.get()
 
-    celsius = (5/9) * (float(f) - 32)
-    lbl_temp["text"] = f"{round(celsius, 2)} \N{DEGREE CELSIUS}"
+    #celsius = (5/9) * (float(f) - 32)
+    lbl_temp["text"] = f"{f}s" #f"{round(celsius, 2)} \N{DEGREE CELSIUS}"
     
 
 #Assigned to window
 btn_convert = tk.Button(
     master=window,
     text="\N{RIGHTWARDS BLACK ARROW}",
-    command = f_2_c
+    command = add_s #f_2_c
     )
 
 lbl_result = tk.Label(master=window, text ="\N{DEGREE CELSIUS}")
